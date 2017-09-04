@@ -1,0 +1,17 @@
+﻿<div>
+    <div [ngClass]="messageGroup.hasMessages ? 'show-group' : 'hide-group'" class="notification-group {{messageGroup.groupClass}}" *ngFor="let messageGroup of messageGroups">
+        <ul *ngIf="messageGroup.hasMessages" class="list-group">
+            <li class="list-group-item {{messageGroup.itemClass}}" *ngFor="let message of messageGroup.displayMessages">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>{{message}}
+            </li>
+        </ul>
+        <div *ngIf="messageGroup.hasMoreLessMessages">
+            <a aria-label="Left Align" data-am-button="secondary" *ngIf="messageGroup.hasMoreMessages" (click)="messageGroup.displayMoreMessages()">
+                <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Show More
+            </a>
+            <a aria-label="Left Align" data-am-button="secondary" *ngIf="messageGroup.hasLessMessages" (click)="messageGroup.displayLessMessages()">
+                <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span> Show Less
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div id="contentLoading" *ngIf="loader.isLoading">
+    <img class="contentLoader" />
+</div>
+
+<div class="ro-modern xpo-dashboard">
+    <header>
+        <div>
+            <h1> {{ pageTitle }}</h1>
+        </div>
+        <div></div>
+    </header>
+
+    <notificationmessage [notificationMessage]="notificationMessage"></notificationmessage>
+
+    <main>
+        <div class="filter-bar" data-filterize="filterize" style="padding-right: 10px;">
+            <div class="filterize">
+                <div class="fbuttoncontainer xpo-filterize-quick-search">
+                    <input #txtFilter type="number" name="filter" value="" [(ngModel)]="fieldFilter" (keyup)="getById()" placeholder="ID" />
+                    <i class="xico-action-magnifier"></i>
+                </div>
+            </div>
+            <div class="pull-right">
+                <div class="button-container">
+                    <div class="xpo-filterize-clear" style="float:right;margin-right:10px;">
+                        <div data-am-button="secondary" class="reset-view" (click)="getAll()">All</div>
+                        <div data-am-button="secondary" class="reset-view" (click)="reset()">Reset</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions-bar" id="actions-bar">
+            <div data-sidepanel-toggleview="" class="glance-view" style="cursor: pointer;"><i class="xico-glance-view isInactive"></i></div>
+            <div class="button-container">
+                <div data-am-button="secondary" class="filterize-save-view-button" style="display:block;" (click)="new()">
+                    New
+                </div>
+            </div>
+        </div>
+        <div class="position-relative">
+            <kendo-grid id="grid-timeLogType"
+                        [data]="gridView"
+                        [scrollable]="'virtual'"
+                        [rowHeight]="33"
+                        [height]="533"
+                        [selectable]="true"
+                        (selectionChange)="selectionChange($event)">
+                <kendo-grid-column field="timelogTypeId" title="Id" [width]="50"></kendo-grid-column>
+                <kendo-grid-column field="timelogType" title="Type" [width]="150"></kendo-grid-column>
+                <kendo-grid-column field="budget" title="Budget" [width]="100"></kendo-grid-column>
+            </kendo-grid>
+
+            <side-panel [nameGridRelatedToSidePanel]="'grid-timeLogType'">
+                <div *ngIf="timeLogTypeDto">
+                    <timelogtype-detail [timeLogTypeDto]="timeLogTypeDto" 
+                                        [pageTitle]="titleSidePanel" 
+                                        [isEdit]="isEdit"
+                                        (onSaved)="onSaved()">
+                    </timelogtype-detail>
+                </div>
+            </side-panel>
+        </div>
+    </main>
+</div>

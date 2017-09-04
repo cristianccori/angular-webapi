@@ -1,0 +1,42 @@
+﻿// For LESS file includes
+@import "xpo-variables.less";
+// Buttons
+
+.ro-modern {
+    //Button Submit
+    & .btn-submit {
+        background-color: @lightBlue !important;
+        border: 1px solid @darkerBlue !important;
+        color: @White !important;
+        background-image: linear-gradient(0, @lightBlue, @lighterBlue) !important;
+        padding-right: 2px !important;
+        padding-left: 2px !important;
+        font-weight: bold !important;
+        font-size: (@font-size-base - 1) !important;
+        cursor: pointer !important;
+        vertical-align: middle !important;
+    }
+
+    & [data-am-button].btn-icon {
+        font-size: 14px;
+        height: 32px;
+        min-width: unset;
+        padding: 0 7px;
+        line-height: 32px;
+
+        & i {
+            color: @text-color;
+        }
+
+        &[disabled] {
+            &:hover {
+                background-image: linear-gradient(0, #f1f1f1, #eee) !important;
+            }
+
+            & i {
+                color: rgba(0,0,0, .26);
+                cursor: not-allowed;
+            }
+        }
+    }
+}

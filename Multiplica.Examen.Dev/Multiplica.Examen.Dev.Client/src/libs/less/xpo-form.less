@@ -1,0 +1,228 @@
+﻿// For LESS file includes
+@import "xpo-variables.less";
+@import "xpo-mixins.less";
+// Forms
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.control-label {
+    font-weight: bold;
+
+    &.top {
+        display: flex;
+    }
+}
+
+.radio,
+.checkbox {
+    display: block;
+    min-height: @line-height-computed; // clear the floating input if there is no label text
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+
+    label {
+        display: inline;
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+    margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+}
+
+// Radios and checkboxes on same line
+.radio-inline input[type="radio"],
+.checkbox-inline input[type="checkbox"] {
+    float: none;
+    height: auto;
+    margin-left: -20px;
+    position: absolute;
+    top: 0px;
+    width: auto;
+}
+
+.radio-inline,
+.checkbox-inline {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-left: 20px;
+    position: relative;
+    vertical-align: middle;
+
+    &.input-right {
+        padding-left: 0;
+        padding-right: 20px;
+
+        & input[type="radio"],
+        input[type="checkbox"] {
+            margin-left: 0;
+            right: 0px;
+            top: 3px;
+        }
+    }
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 10px; // space out consecutive inline controls
+}
+
+// Apply same disabled cursor tweak as for inputs
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+    cursor: pointer;
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+    }
+}
+
+.form-control-static {
+    display: inline-block;
+    margin-bottom: 0;
+    min-height: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+label.form-control-static {
+    text-transform: uppercase;
+}
+
+.form-horizontal {
+    font-size: @font-size-base;
+    color: @text-color;
+    width: @FullWidth;
+}
+
+.form-horizontal .row:before, .form-horizontal .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+.form-horizontal .control-label {
+    margin-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.form-horizontal .control-container {
+    float: @left;
+    min-width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.filter-container {
+    display: inline-block;
+    position: relative;
+    padding: 0 9px;
+}
+
+// Horizontal forms
+
+.form-horizontal {
+    // Consistent vertical alignment of labels, radios, and checkboxes
+    .control-label,
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: (@padding-base-vertical + 1); // Default padding plus a border
+    }
+    // Make form groups behave like rows
+    .form-group {
+        .make-row();
+    }
+    // Only right align form labels here when the columns stop stacking
+    @media (min-width: @screen-sm-min) {
+        .control-label {
+            text-align: left;
+            white-space: normal;
+        }
+    }
+    // Validation states
+    //
+    // Reposition the icon because it's now within a grid column and columns have
+    // `position: relative;` on them. Also accounts for the grid gutter padding.
+    .has-feedback .form-control-feedback {
+        top: 0;
+        right: (@grid-gutter-width / 2);
+    }
+
+    .readonly-control-info {
+        background-color: #eee;
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        display: flex;
+        min-height: 25px;
+        padding: 5px;
+        white-space: normal;
+    }
+
+    .readonly-control-subinfo {
+        font-size: 11px;
+        opacity: 0.8;
+    }
+
+    .editable-control {
+        border: 1px solid #e2e2e2;
+        color: #656565;
+        min-height: 25px;
+        border-radius: 2px;
+    }
+
+    .editable-control:hover {
+        border: 1px solid #ccc;
+        box-shadow: none !important;
+    }
+}
+
+.ro-modern {
+    input:not(.k-input),
+    select:not(.k-input) {
+        border: 1px solid @text-color-border;
+        border-radius: 2px;
+
+        &:disabled {
+            border: 1px solid @disabled-input-border;
+            background-color: @disabled-input-color;
+            cursor: default;
+        }
+    }
+
+    textarea {
+        padding: 5px;
+        border-radius: 2px;
+
+        &[readonly] {
+            border: 1px solid @disabled-input-border;
+            background-color: @disabled-input-color;
+            cursor: default;
+        }
+    }
+}

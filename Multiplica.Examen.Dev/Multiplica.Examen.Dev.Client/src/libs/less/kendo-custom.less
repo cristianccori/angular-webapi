@@ -1,0 +1,147 @@
+﻿// For LESS file includes
+@import "xpo-variables.less";
+// Buttons
+
+.k-widget {
+    font-size: @font-size-base;
+}
+
+.k-dropdown,
+.k-combobox {
+
+    .k-input {
+        padding: 0;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .k-state-default {
+        border: 1px solid @text-color-border;
+    }
+
+    &.k-state-focused,
+    & .k-state-focused {
+        box-shadow: none !important;
+    }
+
+    .k-dropdown-wrap {
+
+        &.k-state-disabled {
+            background-color: @disabled-input-color;
+            background-image: none;
+            opacity: 1;
+
+            .k-input {
+                background-color: @disabled-input-color;
+                cursor: default;
+            }
+
+            &:hover {
+                background-image: none;
+                border: 1px solid @disabled-input-border;
+
+                .k-select {
+                    background-image: inherit;
+                }
+            }
+        }
+    }
+}
+
+.k-dropdown .k-input, .k-combobox .k-input {
+    padding: 3px !important;
+}
+
+.k-dropdown {
+    .k-dropdown-wrap {
+        &.k-state-default {
+            background-image: none;
+        }
+    }
+}
+
+
+kendo-popup {
+    &.k-animation-container {
+        border-radius: unset;
+    }
+
+    .k-popup {
+        text-align: left;
+
+        .k-popup-container {
+            border: solid thin @border-color;
+            border-radius: 2px;
+            background-color: #fff;
+
+            .body {
+                padding: 10px;
+            }
+
+            .footer {
+                border-top: solid thin @border-color;
+                display: inline-flex;
+                justify-content: flex-end;
+                padding: 10px;
+                text-align: right;
+                width: 100%;
+
+                button {
+                    float: unset;
+                }
+
+                .btn-submit {
+                    margin-left: 5px;
+
+                    &:hover {
+                        background-image: linear-gradient(to bottom, #4d90fe, #3078eb) !important;
+                        background-repeat: repeat-x !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.k-switch {
+    &.k-switch-on {
+        .k-switch-handle {
+            transform: translateX(27px) !important;
+        }
+    }
+}
+
+
+.k-popup {
+    .k-list-optionlabel,
+    .k-list .k-item {
+        white-space: nowrap;
+    }
+    font-size: @font-size-base !important;
+}
+
+
+.k-state-active {
+    background: #FFF !important;
+    border-bottom-color: transparent !important;
+}
+
+.k-tabstrip .k-item {
+    border-radius: 0 !important;
+}
+
+.k-link {
+    color: #000000 !important;
+}
+
+.k-link:hover {
+    color: #656565 !important;
+}
+
+.k-tabstrip-items .k-item .k-link {
+    display: inline !important;
+}
+
+.k-fieldselector .k-list li.k-item,.k-pivot-toolbar .k-button {
+    font-size: @font-size-base !important;
+}

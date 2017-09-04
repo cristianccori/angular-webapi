@@ -1,0 +1,1062 @@
+﻿// For LESS file includes
+@import "xpo-variables.less";
+
+//Components
+@import "xpo-table.less";
+@import "xpo-panel.less";
+@import "xpo-form.less";
+@import "xpo-button.less";
+@import "xpo-grid.less";
+@import "xpo-tab.less";
+@import "kendo-custom.less";
+
+html {
+    overflow: @auto;
+}
+
+html, body {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    height: 100%;
+}
+
+.gridtable {
+    display: block;
+    border-left: 0px !important;
+}
+
+.gridrow {
+    display: block;
+    border-bottom: 1px solid #d2d2d2;
+    font-size: 11px;
+    min-width: 2000px;
+    max-width: 8000px;
+}
+
+.gridcell {
+    display: inline-block;
+    padding-bottom: 10px;
+    font-size: 12px;
+    margin: 7px 0px;
+}
+
+.gridcellIcons {
+    margin-left: 10px;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination > li {
+    display: inline;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover,
+.pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+    padding: 10px 16px;
+    font-size: 18px;
+}
+
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+
+/*top filter adjustment for mobile*/
+@media (max-width: 640px) {
+    .filterize {
+        width: 100%;
+    }
+}
+
+/*fix for height of boxe names Company, Market, Equipment Size, etc. for new module pages*/
+.ro-modern .slick-header-column {
+    height: 60px !important;
+}
+
+
+/*import button fix*/
+
+input[type="file"] {
+    display: none !important;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*white space fix nav*/
+
+.header-subnav ul {
+    margin: 0px !important;
+    padding: 0px !important;
+    top: 0px !important;
+}
+
+.newmodulesttitle {
+    font-size: 19px !important;
+    padding: 1px 0px !important;
+    margin: 20px 0px;
+}
+
+.CCheadersubnavwrap {
+    margin: 0px;
+}
+
+.CCheadersubnavwrap ul {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+/*width for tab name to show fully on chrome */
+.tabname {
+    width: auto !important;
+    padding: 0px 10px;
+}
+
+/* Fix for alignment column issues*/
+
+#emptyspace {
+    width: 95px !important;
+    height: 23px;
+}
+
+#idnumber {
+    width: 36px !important;
+    height: 23px;
+}
+
+#company {
+    width: 306px !important;
+    height: 23px;
+}
+
+#market {
+    width: 306px !important;
+    height: 23px;
+}
+
+#equipmenttypewrap {
+    width: 187px !important;
+    height: 23px;
+}
+
+#equipmentsizewrap {
+    width: 183px !important;
+    height: 23px;
+}
+
+#fromdatewrap {
+    width: 177px !important;
+    height: 23px;
+}
+
+#todatewrap {
+    width: 186px !important;
+    height: 23px;
+}
+
+#createbywrap {
+    width: 189px !important;
+    height: 23px;
+}
+
+#createdatewrap {
+    width: 78px !important;
+    height: 23px;
+}
+
+#updatebywrap {
+    width: 103px !important;
+    height: 23px;
+}
+
+#updatedatewrap {
+    width: 103px !important;
+    height: 23px;
+}
+
+/***********Media Queries for New Grid layout for Mobile and Tablet****************/
+
+/*Non Responsive, Horizontal Scroll Mobile*/
+
+@media (min-width: 0px) and (max-width: 799px) {
+    #NewGridWrap {
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 127px !important;
+        position: relative;
+        margin: auto;
+    }
+
+    /*Remove Fixed Column Titles*/
+    .slick-header {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 210px !important;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+/***********Media Queries for New Grid layout for Desktop and Wider Screens****************/
+
+
+@media (min-width: 800px) and (max-width: 1279px) {
+    #NewGridWrap {
+        height: auto;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 225px !important;
+        margin: auto;
+        position: relative;
+    }
+
+    .slick-header {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 300px !important;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1280px) {
+    #NewGridWrap {
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 273px !important;
+        margin: auto;
+    }
+
+    .slick-header {
+        max-width: 8000px !important;
+        overflow: hidden !important;
+        max-width: 8000px !important;
+        min-width: 1800px !important;
+        margin: 0px auto !important;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 350px !important;
+        height: auto;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1500px) and (max-width: 1700px) {
+
+    #NewGridWrap {
+        height: auto;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 349px !important;
+        position: relative;
+        margin: auto;
+    }
+
+    .slick-header {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 427px !important;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+/*remove white space from larger screens*/
+@media (min-width: 1701px) and (max-width: 2000px) {
+    #NewGridWrap {
+        height: auto;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 472px !important;
+        position: relative;
+        margin: auto;
+    }
+
+    .slick-header {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 555px !important;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+/*remove white space from larger screens*/
+@media (min-width: 2100px) {
+    #NewGridWrap {
+        height: auto;
+        white-space: nowrap;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        width: 100%;
+        height: 735px !important;
+        position: relative;
+        margin: auto;
+    }
+
+    .slick-header {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #CompleteGridWrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: 735px !important;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+    }
+}
+
+.xpo-dashboard {
+    width: 100%;
+    white-space: nowrap;
+    height: auto;
+}
+
+.disabled-button {
+    opacity: 0.5;
+}
+
+#grid-content {
+    min-width: 2000px !important;
+    max-width: 8000px !important;
+    margin: auto;
+}
+
+.ro-modern {
+
+    .alert-bar {
+        padding: 10px;
+
+        .alert {
+            margin-bottom: 0;
+        }
+    }
+
+    .alert {
+        &.alert-info {
+            background-color: #d9edf7;
+            border-color: #bcdff1;
+            color: #31708f;
+        }
+    }
+}
+
+/***********End of Horizontal Grid Layout Styles****************/
+
+#ColumnNamesContainer {
+    max-width: 8000px;
+    overflow: hidden !important;
+    margin: 0px auto !important;
+    min-width: 2000px;
+}
+
+.ro-modern div.slick-header-column.split-text {
+    padding-top: 21px !important;
+}
+
+.ro-modern .filter-bar {
+    .filter-container {
+        input[type='text']:disabled {
+            border: 1px solid #d9d9d9;
+            background-color: #eee;
+            cursor: default;
+        }
+    }
+}
+
+.ro-modern .filter-bar .button-container {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    padding: 0 10px;
+    position: relative;
+}
+
+.ro-modern .filter-bar .button-container:last-child {
+    padding-right: 0px;
+}
+
+.ro-modern .filter-bar .filterpop a:link {
+    color: @text-color;
+    white-space: nowrap;
+}
+
+.ro-modern .form-bar {
+    margin: 0px;
+}
+
+.ro-modern .filtered-views > li.removable:hover .tab-edit-remove-icons {
+    padding: 0px !important;
+}
+
+.ro-modern .filtered-views > li.removable > span > .label {
+    margin-top: -4px;
+}
+
+.ro-modern .navigation-button {
+    position: absolute;
+    top: 15px;
+
+    &.left {
+        left: 15px;
+    }
+
+    &.right {
+        right: 0px;
+    }
+
+    & i.xico-ui-arrow-left, i.xico-ui-arrow-right {
+        font-size: 32px;
+    }
+
+    & i.xico-ui-arrow-left:hover, i.xico-ui-arrow-right:hover {
+        background-color: rgba(158,158,158,.2);
+        border-radius: 50%;
+    }
+}
+
+
+.font-size-14px {
+    font-size: 14px;
+}
+
+.text-danger {
+    color: #f55755;
+}
+
+.text-success {
+    color: #1aaf5d;
+}
+
+.text-primary {
+    color: #4C8DFA;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.margin-bottom-10px {
+    margin-bottom: 10px;
+}
+
+.margin-right-10px {
+    margin-right: 10px;
+}
+
+.margin-right-15px {
+    margin-right: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*********Begin Side Panel styles**************/
+
+.ro-modern [data-panel].ro-side-panel {
+    height: 100%;
+
+    & .actions-bar-grid {
+        height: 50px;
+        position: relative;
+
+        &:before,
+        &:after {
+            display: table;
+            content: " ";
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        & .button-container {
+            align-items: center;
+            display: flex;
+            height: 49px;
+            padding: 0 10px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.ro-modern [data-panel] .content-without-aside {
+    padding: 15px 15px 0px 15px;
+    background: #FFF;
+    height: 100%;
+    min-height: 0;
+    max-height: 1000px;
+    box-sizing: border-box;
+
+    & .disabled {
+        background-color: #fcfcfc;
+        border: 1px solid #dcdcdc;
+        color: #a2a2a2;
+        border-radius: 2px;
+    }
+}
+/*************end ro-table styles***********/
+
+/* With Columns grid */
+.slick-viewport .gridtable .width60 {
+    width: 60px !important;
+}
+
+.slick-viewport .gridtable .width80 {
+    width: 80px !important;
+}
+
+.slick-viewport .gridtable .width100 {
+    width: 100px !important;
+}
+
+.slick-viewport .gridtable .width120 {
+    width: 120px !important;
+}
+
+.slick-viewport .gridtable .width150 {
+    width: 150px !important;
+}
+
+/*****************************Modals******************************/
+.modal-title {
+    & > h2 {
+        width: 100%;
+        background: @Black;
+        padding: 0px 0px 0px 10px;
+        color: @White;
+        margin: 0px;
+        height: 45px;
+        line-height: 45px;
+    }
+
+    & .modal-sub-title {
+        background: @White linear-gradient(to bottom,rgba(0,0,0,0.15) 0px,rgba(0,0,0,0.05) 10%) repeat scroll 0 0;
+        border: 1px solid @lightGrey;
+        border-image: none;
+        border-style: solid none;
+        border-width: 1px medium 1px 1px;
+        margin-bottom: 10px;
+        padding: 0px 10px 0px 10px;
+
+        & h3 {
+            font-size: 13px;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        & label, & p {
+            font-size: @font-size-base + 2;
+            margin-bottom: 8px;
+            margin-top: 0px;
+        }
+    }
+}
+
+.css_warning {
+    list-style-type: none;
+    font-size: @fontSize14;
+    color: @White;
+    background: @warning-color;
+    padding: 3px;
+    margin: 0px;
+    min-height: 79px;
+    list-style-type: none;
+
+    ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px 15px;
+    }
+
+    ul li {
+        padding: 5px 0px;
+        list-style-type: none;
+    }
+}
+
+/*****************************Notes control******************************/
+
+.ro-modern .add-notes-control textarea {
+    resize: none;
+    font-size: (@font-size-base + 1);
+    height: 75px;
+    width: @FullWidth;
+}
+
+#contentLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @FullWidth;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(248, 248, 248, 0.5);
+    opacity: .8;
+}
+
+.contentLoader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px; /* -1 * image height / 2 */
+    display: block;
+}
+
+/*****************************Multi Select******************************/
+.ro-modern multiselectfilter a > span.displaycriteria.filter-displaycriteria {
+    color: @lightBlue;
+}
+
+/*****************************Tooltip***********************************/
+.tooltip {
+    & .tooltip-inner {
+        max-width: initial;
+    }
+}
+
+.reason-code-lookup .k-dropdown-wrap {
+    .k-animation-container {
+        max-width: 470px !important;
+    }
+
+    .tooltip {
+        .tooltip-inner {
+            white-space: normal;
+        }
+    }
+}
+
+/*****************************Tab Pills Search Form***********************************/
+.ro-modern [data-tab].pills > li {
+    margin-bottom: 0px !important;
+}
+
+/*****************************Inputs & data errors***********************************/
+.ro-modern .filter-bar input[type=number] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin: 0;
+    min-height: 25px;
+    padding: 0 0px 0 3px;
+    width: 225px;
+}
+
+.ro-modern .ro-datepicker {
+    width: 85px !important;
+}
+
+.ro-modern .filterize {
+    white-space: normal;
+
+    & .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    & form {
+        margin-bottom: 0;
+    }
+}
+
+.ro-modern input[type=text].input-data-errors {
+    border: 1px solid @error-input-color;
+    color: @error-input-color;
+    padding: 5px;
+}
+
+.ro-modern .message-error {
+    color: @error-color;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.ro-modern notificationmessage {
+    display: block;
+
+    &.has-margin-bottom {
+        & .notification-group.show-group {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.ro-modern .notification-group {
+    color: #FFF;
+    font-size: 12px;
+    padding: 10px;
+    text-align: left;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+
+    & ul {
+        margin: 0px;
+        max-height: 168px;
+        overflow-y: auto;
+
+        & li {
+            margin-bottom: 10px;
+            margin-left: -25px;
+        }
+
+        & li:last-child {
+            margin-bottom: 0px;
+        }
+
+        & li:only-child {
+            list-style: none;
+            margin-bottom: 0px;
+            margin-left: -40px;
+        }
+    }
+
+    & a {
+        margin-top: 10px;
+    }
+
+    &.error {
+        background-color: @error-color;
+    }
+
+    &.warning {
+        background-color: @warning-color;
+    }
+
+    &.success {
+        background-color: @success-color;
+    }
+
+    &.info {
+        background-color: @info-color;
+    }
+
+    &.show-group {
+        opacity: 1;
+    }
+
+    &.hide-group {
+        opacity: 0;
+        padding: 0px !important;
+    }
+}
+
+.ro-modern .modal-error, .ro-modern.modal-error {
+    background: rgba(255,255,255,0.8);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+
+    & > .result {
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    & > .result .xico-ui-btn-exclaim {
+        color: #D70f0D;
+    }
+
+    & > .result i {
+        font-size: 85px;
+    }
+
+    & > .result p {
+        font-size: 23px;
+        margin-top: 25px;
+    }
+}
+
+/*****************************Action Bar & Button container***********************************/
+
+.ro-modern .actions-bar .button-container.pull-right:first-child {
+    border-left: 1px solid #eee;
+    border-right: none;
+}
+
+.indicatorgreen {
+    background-color: #99ff99;
+}
+
+.indicatoryellow {
+    background-color: #ffff99;
+}
+
+.indicatorred {
+    background-color: #ff9999;
+}
+
+/******************************************Audit Bar******************************************/
+
+.audit-bar {
+    border: solid thin #eee;
+    border-radius: 2px;
+    display: inline-flex;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 2em;
+    width: auto;
+
+    > div {
+        display: inline-flex;
+        padding: 0 15px;
+    }
+
+    > div.heading {
+        background-color: #eee;
+        font-weight: bold;
+    }
+
+    > div.detail {
+    }
+}
+
+
+/***************************************alertify-log*****************************************/
+
+.alertify-log {
+    &.alertify-log-error {
+        background: @error-color !important;
+        color: #fff !important;
+    }
+
+    &.alertify-log-success {
+        background: @success-color !important;
+        color: #fff !important;
+    }
+}
+
+
+.popover-content {
+    word-wrap: break-word;
+}
+
+/******************************************/
+
+&.kendo-grid-label {
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    border-radius: 3px;
+
+    &.pending-status {
+        background-color: #f59d00;
+    }
+
+    &.complete-status {
+        background-color: #1aaf5d;
+    }
+}
+
+.whiteSpaceNormal {
+    white-space: normal;
+}
+
+.content-ataglance {
+    padding: 12px;
+    height: 590px;
+    overflow-y: auto;
+}
+
+.trip-header-info {
+    align-items: center;
+    background-color: @charcoal;
+    display: flex;
+    padding: 0 15px;
+
+    > div {
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    h2 {
+        color: #FFF;
+        font-size: 1.35em;
+
+        small {
+            font-size: 12px;
+            font-weight: normal;
+        }
+    }
+}
+
+
+/**************** Modal container from Backoffice*******************/
+.ro-modern .ro-modal-container {
+    padding: 10px 10px 0;
+}
+
+#grid-reasonruel-detail-assignated > kendo-grid-list > div {
+    height: 87%;
+}
+
+.ro-modern .footer-bar {
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: flex-end;
+    padding: 0 10px;
+
+    button {
+        color: #383838 !important;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.btn-submit {
+            color: @White !important;
+            font-size: 11px !important;
+            padding-right: 11px !important;
+            padding-left: 10px !important;
+        }
+    }
+}

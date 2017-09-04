@@ -1,0 +1,5 @@
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.DTOs\bin\Debug\Multiplica.Examen.Dev.Application.DTOs.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.DTOs\bin\Debug\Multiplica.Examen.Dev.Application.DTOs.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.DTOs\obj\Debug\Multiplica.Examen.Dev.Application.DTOs.csprojResolveAssemblyReference.cache
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.DTOs\obj\Debug\Multiplica.Examen.Dev.Application.DTOs.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.DTOs\obj\Debug\Multiplica.Examen.Dev.Application.DTOs.pdb

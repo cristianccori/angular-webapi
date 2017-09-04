@@ -1,0 +1,17 @@
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.Application.Services.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.Application.Services.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.Application.DTOs.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataAccess.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataModel.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\EntityFramework.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataBase.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\System.Data.SQLite.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.Application.DTOs.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataAccess.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataModel.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\EntityFramework.xml
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\Multiplica.Examen.Dev.DataBase.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\bin\Debug\System.Data.SQLite.xml
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\obj\Debug\Multiplica.Examen.Dev.Application.Services.csprojResolveAssemblyReference.cache
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\obj\Debug\Multiplica.Examen.Dev.Application.Services.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.Application.Services\obj\Debug\Multiplica.Examen.Dev.Application.Services.pdb

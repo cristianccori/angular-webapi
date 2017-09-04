@@ -1,0 +1,10 @@
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\Multiplica.Examen.Dev.DataBase.dll.config
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\Multiplica.Examen.Dev.DataBase.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\Multiplica.Examen.Dev.DataBase.pdb
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.SqlServer.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.xml
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.SqlServer.xml
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.csprojResolveAssemblyReference.cache
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.dll
+D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.pdb
