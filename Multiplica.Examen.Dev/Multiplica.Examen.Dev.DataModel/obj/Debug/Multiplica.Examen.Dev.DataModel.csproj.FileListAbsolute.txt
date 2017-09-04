@@ -10,3 +10,14 @@ D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\Entity
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.csprojResolveAssemblyReference.cache
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.dll
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.pdb
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\Multiplica.Examen.Dev.DataModel.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\Multiplica.Examen.Dev.DataModel.pdb
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\EntityFramework.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\Multiplica.Examen.Dev.DataBase.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\Multiplica.Examen.Dev.DataBase.pdb
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\EntityFramework.xml
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.csprojResolveAssemblyReference.cache
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataModel\obj\Debug\Multiplica.Examen.Dev.DataModel.pdb

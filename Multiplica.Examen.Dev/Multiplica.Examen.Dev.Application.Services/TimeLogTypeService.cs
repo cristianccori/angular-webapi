@@ -1,16 +1,14 @@
-﻿using Multiplica.Examen.Dev.Application.DTOs.Common;
+﻿using System;
+using Multiplica.Examen.Dev.Application.DTOs.Common;
 using Multiplica.Examen.Dev.Application.DTOs.TimeLogType;
+using Multiplica.Examen.Dev.Application.IServices;
 using Multiplica.Examen.Dev.Application.Services.Mapping;
 using Multiplica.Examen.Dev.DataAccess.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Multiplica.Examen.Dev.Application.Services
 {
-    public class TimeLogTypeService
+    public class TimeLogTypeService : ITimeLogTypeService
     {
         private readonly TimeLogTypeRepository _timeLogTypeRepository;
 
@@ -59,6 +57,7 @@ namespace Multiplica.Examen.Dev.Application.Services
                                 Severity = RuleSeverity.Error} })
                     };
                 }
+                model.Type = model.Type.ToUpper();
                 _timeLogTypeRepository.Create(model);
                 //success, no broken rules by error
                 return new OperationResult();

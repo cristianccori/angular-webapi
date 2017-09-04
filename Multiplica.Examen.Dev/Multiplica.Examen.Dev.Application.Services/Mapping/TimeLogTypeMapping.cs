@@ -1,10 +1,6 @@
-﻿using Multiplica.Examen.Dev.Application.DTOs.TimeLogType;
+﻿using System.Collections.Generic;
+using Multiplica.Examen.Dev.Application.DTOs.TimeLogType;
 using Multiplica.Examen.Dev.DataModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Multiplica.Examen.Dev.Application.Services.Mapping
 {

@@ -49,6 +49,10 @@
       <Project>{cced88b3-5e0a-459d-b511-f14caac607d4}</Project>
       <Name>Multiplica.Examen.Dev.Application.DTOs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Multiplica.Examen.Dev.Application.IServices\Multiplica.Examen.Dev.Application.IServices.csproj">
+      <Project>{76ec381e-6d3c-4b64-89e4-8cd6425bc095}</Project>
+      <Name>Multiplica.Examen.Dev.Application.IServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Multiplica.Examen.Dev.DataAccess\Multiplica.Examen.Dev.DataAccess.csproj">
       <Project>{c57cf6df-5e53-4f9b-9e8b-e139757ef35d}</Project>
       <Name>Multiplica.Examen.Dev.DataAccess</Name>

@@ -5,7 +5,9 @@
 <div class="ro-modern xpo-dashboard">
     <header>
         <div>
-            <h1> {{ pageTitle }}</h1>
+            <h1 style="padding-left: 5px;"> 
+                {{ pageTitle }}
+            </h1>
         </div>
         <div></div>
     </header>
@@ -16,15 +18,15 @@
         <div class="filter-bar" data-filterize="filterize" style="padding-right: 10px;">
             <div class="filterize">
                 <div class="fbuttoncontainer xpo-filterize-quick-search">
-                    <input #txtFilter type="number" name="filter" value="" [(ngModel)]="fieldFilter" (keyup)="getById()" placeholder="ID" />
+                    <input #txtFilter type="number" name="filter" value="" [(ngModel)]="fieldFilter" (keyup)="getById()" (ngModelChange)="getById()" placeholder="ID" min="1" max="99999"/>
                     <i class="xico-action-magnifier"></i>
                 </div>
             </div>
             <div class="pull-right">
                 <div class="button-container">
-                    <div class="xpo-filterize-clear" style="float:right;margin-right:10px;">
-                        <div data-am-button="secondary" class="reset-view" (click)="getAll()">All</div>
-                        <div data-am-button="secondary" class="reset-view" (click)="reset()">Reset</div>
+                    <div style="float:right;margin-right:10px;">
+                        <div data-am-button="secondary" (click)="getAll()">All</div>
+                        <div data-am-button="secondary" (click)="reset()">Reset</div>
                     </div>
                 </div>
             </div>
@@ -32,7 +34,7 @@
         <div class="actions-bar" id="actions-bar">
             <div data-sidepanel-toggleview="" class="glance-view" style="cursor: pointer;"><i class="xico-glance-view isInactive"></i></div>
             <div class="button-container">
-                <div data-am-button="secondary" class="filterize-save-view-button" style="display:block;" (click)="new()">
+                <div data-am-button="secondary" style="display:block;" (click)="new()">
                     New
                 </div>
             </div>

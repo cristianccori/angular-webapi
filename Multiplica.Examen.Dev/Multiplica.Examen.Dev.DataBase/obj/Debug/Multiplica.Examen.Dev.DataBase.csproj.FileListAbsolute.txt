@@ -8,3 +8,12 @@ D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityF
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.csprojResolveAssemblyReference.cache
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.dll
 D:\Examen\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.pdb
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\Multiplica.Examen.Dev.DataBase.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\Multiplica.Examen.Dev.DataBase.pdb
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.csprojResolveAssemblyReference.cache
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.dll
+C:\Users\cristian.ccori\Documents\GitHub\angular-webapi\Multiplica.Examen.Dev\Multiplica.Examen.Dev.DataBase\obj\Debug\Multiplica.Examen.Dev.DataBase.pdb

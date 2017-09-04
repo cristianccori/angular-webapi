@@ -71,7 +71,6 @@
     <Compile Include="Repository\TimeLogTypeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

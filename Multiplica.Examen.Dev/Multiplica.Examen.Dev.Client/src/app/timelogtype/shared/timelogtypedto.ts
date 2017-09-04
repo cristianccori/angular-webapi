@@ -9,13 +9,13 @@ export class TimeLogTypeDto {
     @Expose()
     private budget: number;
 
-    constructor(timelogType: string, budget: number) {
+    constructor(timelogType?: string, budget?: number) {
         this.timelogType = timelogType;
         this.budget = budget;
     }
 
-    get TimelogType(): string {
-        return this.TimelogType;
+    get TimeLogType(): string {
+        return this.timelogType;
     }
     set TimeLogType(value: string) {
         this.timelogType = value;

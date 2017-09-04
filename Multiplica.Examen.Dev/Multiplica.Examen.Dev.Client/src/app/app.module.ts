@@ -1,17 +1,17 @@
-import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
 import { DataService } from "./shared/services/data.service";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { HttpModule } from '@angular/http';
+import { NgModule } from '@angular/core';
+import { NotificationMessageModule } from './shared/ui/notificationmessage/notificationmessage.module';
+import { RouterModule, Routes } from '@angular/router';
 import { TimeLogTypeComponent } from './timelogtype/timelogtype.component';
 import { TimeLogTypeDetailComponent } from "./timelogtype/timelogtype-detail.component";
 import { TimeLogTypeRouting } from "./timelogtype/timelogtype.routing";
-import { GridModule } from '@progress/kendo-angular-grid';
 import { SidePanelModule } from './shared/ui/sidepanel/sidepanel.module';
-import { NotificationMessageModule } from './shared/ui/notificationmessage/notificationmessage.module';
 
 @NgModule({
     imports: [

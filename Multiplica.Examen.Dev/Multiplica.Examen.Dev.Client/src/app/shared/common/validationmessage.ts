@@ -1,5 +1,5 @@
 export const ValidationMessage = {
-    errorGeneral: "Error General, Please contact the site administrator.",
+    errorGeneral: "General error, please contact the site administrator.",
     recordSuccessfully: "Record has been saved successfully.",
     updateSuccessfully: "Record has been updated successfully.",
     typeIsRequired: "Type is required.",

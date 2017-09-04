@@ -1,13 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, OnChanges, Output, SimpleChange } from "@angular/core";
-import { Http, URLSearchParams, Headers } from "@angular/http";
+import { DataService } from "../shared/services/data.service";
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl, ReactiveFormsModule, AbstractControl } from '@angular/forms';
-import { OperationResult } from "../shared/common/operationresult";
-import { ValidationMessage } from "../shared/common/validationmessage";
+import { Http, URLSearchParams, Headers } from "@angular/http";
 import { NotificationService, ILoader } from "../shared/services/notification.service";
 import { NotificationMessage } from "../shared/ui/notificationmessage/notificationmessage";
-import { plainToClass } from "class-transformer";
-import { DataService } from "../shared/services/data.service";
+import { OperationResult } from "../shared/common/operationresult";
 import { TimeLogTypeDto } from "./shared/timelogtypedto";
+import { ValidationMessage } from "../shared/common/validationmessage";
 
 declare var $: any;
 
@@ -18,18 +17,18 @@ declare var $: any;
 })
 
 export class TimeLogTypeDetailComponent implements OnInit {
-    private timeLogTypeUrl: string = "timelogtypes";
+    @Input() pageTitle: string;
+    @Input() timeLogTypeDto: TimeLogTypeDto;
+    @Input() isEdit: boolean;
+    @Output() onSaved = new EventEmitter();
     timeLogTypeForm: FormGroup;
     notificationMessage: NotificationMessage = new NotificationMessage();
     loader: ILoader;
     uniqueMessagesErrors: Array<string>;
     validationMessages: any;
-    @Input() pageTitle: string;
-    @Input() timeLogTypeDto: TimeLogTypeDto;
-    @Input() isEdit: boolean;
-    @Output() onSaved = new EventEmitter();
-    submitted = false;
-    
+
+    private timeLogTypeUrl: string = "timelogtypes";
+
     constructor(
         private dataService: DataService,
         private fb: FormBuilder,
@@ -43,45 +42,13 @@ export class TimeLogTypeDetailComponent implements OnInit {
         this.buildForm();
     }
 
-    ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
-        this.removeMessages();
-    }
-
     formErrors = {
         'type': '',
         'budget': ''
     };
 
-    assignMessagesValidation() {
-        for (let m of this.uniqueMessagesErrors)
-            if (m)
-                this.notificationMessage.Errors.Add(m);
-    }
-
-    onValueChanged(data?: any) {
-        const form = this.timeLogTypeForm;
-        this.uniqueMessagesErrors = new Array<string>();
-        for (const field in this.formErrors) {
-            // clear previous error message (if any)
-            this.formErrors[field] = '';
-            let control = form.get(field);
-            if (control && !control.valid) {
-                const messages = this.validationMessages[field];
-                for (const key in control.errors) {
-                    //prevent duplicate
-                    if (this.uniqueMessagesErrors.indexOf(messages[key]) == -1)
-                        this.uniqueMessagesErrors.push(messages[key]);
-                }
-            }
-        }
-    }
-
-    removeMessages(): void {
-        this.notificationMessage.clearAll();
-    }
-
     save(): void {
-        this.removeMessages();
+        this.notificationMessage.clearAll();
         if (!this.timeLogTypeForm.valid) {
             this.assignMessagesValidation();
             return;
@@ -133,7 +100,7 @@ export class TimeLogTypeDetailComponent implements OnInit {
     buildForm(): void {
         var rules =
             {
-                'type': [this.timeLogTypeDto.TimelogType, [
+                'type': [this.timeLogTypeDto.TimeLogType, [
                     Validators.required,
                     Validators.maxLength(20)
                 ]],
@@ -162,4 +129,32 @@ export class TimeLogTypeDetailComponent implements OnInit {
             }
         }
     };
+
+    assignMessagesValidation() {
+        for (let m of this.uniqueMessagesErrors)
+            if (m)
+                this.notificationMessage.Errors.Add(m);
+    }
+
+    onValueChanged(data?: any) {
+        const form = this.timeLogTypeForm;
+        this.uniqueMessagesErrors = new Array<string>();
+        for (const field in this.formErrors) {
+            // clear previous error message (if any)
+            this.formErrors[field] = '';
+            let control = form.get(field);
+            if (control && !control.valid) {
+                const messages = this.validationMessages[field];
+                for (const key in control.errors) {
+                    //prevent duplicate
+                    if (this.uniqueMessagesErrors.indexOf(messages[key]) == -1)
+                        this.uniqueMessagesErrors.push(messages[key]);
+                }
+            }
+        }
+    }
+
+    public removeMessages(): void {
+        this.notificationMessage.clearAll();
+    }
 }

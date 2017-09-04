@@ -1,17 +1,17 @@
 import { AfterViewInit, ViewChild, ViewChildren, Component, QueryList, Input, OnInit, OnChanges, SimpleChange, ComponentRef, EventEmitter, ComponentFactoryResolver, ViewContainerRef } from "@angular/core";
 import { DataService } from "../shared/services/data.service";
+import { Constants } from "../shared/common/constants";
 import { FormGroup, Validators, ReactiveFormsModule } from "@angular/forms";
 import { GridDataResult, PageChangeEvent, GridComponent, SelectionEvent } from "@progress/kendo-angular-grid";
+import { GridSelection } from "../shared/ui/gridKendo/grid-selection.component";
 import { Http, URLSearchParams, Headers } from "@angular/http";
 import { NotificationService, ILoader } from "../shared/services/notification.service";
 import { NotificationMessage } from "../shared/ui/notificationmessage/notificationmessage";
-import { TimeLogTypeDetailComponent } from "./timelogtype-detail.component";
 import { SidePanelComponent } from "../shared/ui/sidepanel/sidepanel.component";
+import { TimeLogTypeDetailComponent } from "./timelogtype-detail.component";
 import { TimeLogTypeDto } from "./shared/timelogtypedto";
 import { Title } from '@angular/platform-browser';
 import { ValidationMessage } from "../shared/common/validationmessage";
-import { Constants } from "../shared/common/constants";
-import { GridSelection } from "../shared/ui/gridKendo/grid-selection.component";
 
 declare var $: any;
 
@@ -23,17 +23,19 @@ declare var $: any;
 
 export class TimeLogTypeComponent implements OnInit, AfterViewInit {
     @ViewChild(SidePanelComponent) sidePanelComponent: SidePanelComponent;
+    @ViewChild(TimeLogTypeDetailComponent) timeLogTypeDetailComponent: TimeLogTypeDetailComponent;
+    @ViewChild('txtFilter') txtFilter;
     pageTitle: string = "Time Log Type Maintenance";
     loader: ILoader;
     notificationMessage: NotificationMessage = new NotificationMessage();
-    fieldFilter: string = "";
+    fieldFilter: number;
     timeLogTypeDto: TimeLogTypeDto;
     titleSidePanel: string = "";
     isEdit: boolean = false;
 
     private gridView: GridDataResult;
-    private getAllUrl: string = "timelogtypes/getAll";
-    private getByIdUrl: string = "timelogtypes/getById";
+    private getAllUrl: string = "timelogtypes/getall";
+    private getByIdUrl: string = "timelogtypes/getbyid";
 
     constructor(
         public notificationService: NotificationService,
@@ -56,14 +58,16 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
+        this.txtFilter.nativeElement.focus();
         this.getAll();
     }
 
     new(): void {
-        this.openSidePanel(new TimeLogTypeDto(null, null), Constants.saveMode.NewMode);
+        this.timeLogTypeDto = this.getNewTimeLogType();
+        this.openSidePanel(this.timeLogTypeDto, Constants.saveMode.NewMode);
     }
 
-    public selectionChange(event: any): void {
+    selectionChange(event: any): void {
         this.notificationMessage.clearAll();
         if (event.selected) {
             this.selectDataItemByIndex(event.index);
@@ -76,7 +80,6 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
     selectDataItemByIndex(rowIndex) {
         let dataItem = this.gridView.data[rowIndex];
         if (dataItem) {
-            debugger;
             this.openSidePanel(dataItem, Constants.saveMode.EditMode);
         } else {
             this.sidePanelComponent.closeSidePanel(false);
@@ -100,6 +103,7 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
             },
             error => {
                 this.notificationMessage.Errors.Add(ValidationMessage.errorGeneral);
+                this.notificationService.hideLoader();
             },
             () => {
                 this.notificationService.hideLoader();
@@ -109,28 +113,37 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
     getById() {
         this.notificationMessage.clearAll();
         var params = new URLSearchParams();
-        params.set("timelogtypeid", (this.fieldFilter == null ? '0' : this.fieldFilter));
-        this.notificationService.showLoader();
-        this.dataService.set(this.getByIdUrl);
-        this.dataService.get(params)
-            .subscribe(result => {
-                var dataResult: any = result.json();
-                if (dataResult != null) {
-                    var arr = [dataResult]
-                    this.gridView = {
-                        data: arr,
-                        total: 1
-                    };
-                }
-                else 
-                    this.gridView.data = [];
-            },
-            error => {
-                this.notificationMessage.Errors.Add(ValidationMessage.errorGeneral);
-            },
-            () => {
-                this.notificationService.hideLoader();
-            });
+        if (this.fieldFilter === undefined || this.fieldFilter === null || this.fieldFilter.toString().trim() == '') {
+            return;
+        }
+        else if (this.fieldFilter > 99999) {
+            this.gridView.data = [];
+        }
+        else {
+            params.set("timelogtypeid", this.fieldFilter.toString().trim());
+            this.notificationService.showLoader();
+            this.dataService.set(this.getByIdUrl);
+            this.dataService.get(params)
+                .subscribe(result => {
+                    var dataResult: any = result.json();
+                    if (dataResult != null) {
+                        var arr = [dataResult]
+                        this.gridView = {
+                            data: arr,
+                            total: 1
+                        };
+                    }
+                    else
+                        this.gridView.data = [];
+                },
+                error => {
+                    this.notificationMessage.Errors.Add(ValidationMessage.errorGeneral);
+                    this.notificationService.hideLoader();
+                },
+                () => {
+                    this.notificationService.hideLoader();
+                });
+        }
     }
 
     openSidePanel(timelogtypedto: TimeLogTypeDto, mode: number) {
@@ -144,6 +157,7 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
             this.isEdit = false;
             this.titleSidePanel = "New Time Log Type";
         }
+        this.removeMessagesOnSidePanel();
         this.sidePanelComponent.sidePanelRowSelected = true;
         this.sidePanelComponent.openSidePanel(true);
     }
@@ -165,10 +179,25 @@ export class TimeLogTypeComponent implements OnInit, AfterViewInit {
         this.getAll();
     }
 
+    getNewTimeLogType(): TimeLogTypeDto {
+        this.timeLogTypeDto = new TimeLogTypeDto();
+        this.timeLogTypeDto.TimeLogType = null;
+        this.timeLogTypeDto.Budget = null;
+        return this.timeLogTypeDto;
+    }
+
+    removeMessagesOnSidePanel() {
+        if (this.timeLogTypeDetailComponent !== undefined && this.timeLogTypeDetailComponent !== null) {
+            this.timeLogTypeDetailComponent.removeMessages();
+        }
+    }
+
     reset() {
+        this.timeLogTypeDto = this.getNewTimeLogType();
         this.sidePanelComponent.closeSidePanel(false);
+        this.removeMessagesOnSidePanel();
         this.notificationMessage.clearAll();
         this.gridView.data = [];
-        this.fieldFilter = "";
+        this.fieldFilter = null;
     }
 }
