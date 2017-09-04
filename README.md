@@ -6,5 +6,5 @@ Se utilizaron algunos componentes de terceros como el kendo-angular-grid de Kend
 Los servicios se consumen a través de Web API en formato JSON. En esta capa se utilizó inyección de dependencias (Unity) para invocar la capa de Aplicación-Servicios. La URL de la Web API es: http://localhost:8060/ <br><br>
 La capa de datos utiliza una base de datos SQLite con las acciones de crear y obtener funcionando. <br><br>
 Los verbos para la prueba han sido de creación y listado (POST, GET); sin embargo, el cliente SPA está listo para implementar llamadas a verbos PUT y DELETE (data.service.ts) <br><br>
-Se crearon tests para validar las capas de aplicación y datos. <br><br>
+Se crearon tests con NUnit para validar las capas de aplicación y datos. <br><br>
 La solución corre en Visual Studio 2015, framework 4.5.2 <br>
